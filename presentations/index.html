@@ -1,38 +1,47 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<title>Presentation</title>
-
-		<link rel="stylesheet" href="node_modules/reveal.js/dist/reset.css">
-		<link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
-		<link rel="stylesheet" href="node_modules/reveal.js/dist/theme/black.css">
-
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="node_modules/reveal.js/plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<h1>Presentation</h1>
-				</section>
-				<section>
-					<h2>Slide 2</h2>
-				</section>
-			</div>
-		</div>
-
-		<script src="node_modules/reveal.js/dist/reveal.js"></script>
-		<script src="node_modules/reveal.js/plugin/markdown/markdown.js"></script>
-		<script src="node_modules/reveal.js/plugin/notes/notes.js"></script>
-		<script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script>
-		<script>
-			Reveal.initialize({
-				plugins: [ RevealMarkdown, RevealNotes, RevealHighlight ]
-			});
-		</script>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Presentation</title>
+  </head>
+  <body>
+    <body>
+      <div class="reveal">
+        <div class="slides">
+          <section
+            data-background-image="poster/ki-werkstatt.jpeg"
+            data-background-size="cover"
+            data-background-position="center"
+            class="h-full w-full"
+          >
+            <h1
+              class="transform-none text-5xl rotate-13 translate-x-54 translate-y-45 text-shadow-[2px_2px_8px_rgb(0_0_0_/_0.9)]"
+            >
+              Willkommen
+            </h1>
+            <p
+              class="fixed bottom-8 left-0 text-5xl font-bold"
+              style="
+                -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+              "
+            >
+              Die AG für KI-Kultur und Experimente
+            </p>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+  # Markdown-Slide
+  - Punkt A
+  - Punkt B
+            </textarea>
+          </section>
+        </div>
+      </div>
+      <script type="module" src="/src/main.ts"></script>
+    </body>
+  </body>
 </html>

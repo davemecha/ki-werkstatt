@@ -1,15 +1,24 @@
 {
   "name": "presentations",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.13",
+    "@types/reveal.js": "^5.2.0",
+    "tailwindcss": "^4.1.13",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.2",
+    "vite-plugin-singlefile": "^2.3.0",
+    "vite-plugin-static-copy": "^3.1.2"
+  },
   "dependencies": {
-    "reveal.js": "^5.1.0"
+    "@fontsource/poppins": "^5.2.6",
+    "reveal.js": "^5.2.1"
   }
 }
