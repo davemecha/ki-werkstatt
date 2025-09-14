@@ -124,6 +124,171 @@
               </div>
             </div>
           </section>
+          <section>
+            <div class="flex flex-row items-start">
+              <h2 class="text-5xl font-bold mr-12 mb-8 text-left">
+                Was ist KI?
+              </h2>
+              <p class="text-3xl text-gray-400 mb-8 text-left leading-16 mt-0">
+                Neuronales Netz
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-[repeat(9,max-content)] gap-x-4 items-center text-center text-sm h-full"
+            >
+              <!-- 0. Input Text -->
+              <div
+                class="flex flex-col items-start justify-start fragment"
+                data-fragment-index="0"
+              >
+                <div
+                  class="bg-yellow-200 text-black text-2xl rounded-full w-32 h-32 flex items-center justify-center text-center p-2"
+                >
+                  Male<br />mir eine<br />Katze
+                </div>
+              </div>
+
+              <!-- 1. => Input Vector -->
+              <div
+                class="col-start-1 text-5xl text-white fragment pt-2 pb-4"
+                data-fragment-index="1"
+              >
+                &darr;
+              </div>
+
+              <div
+                class="col-start-9 text-2xl text-white fragment"
+                data-fragment-index="5"
+              >
+                Output
+              </div>
+
+              <div
+                class="col-start-1 fragment text-black justify-items-center"
+                data-fragment-index="1"
+              >
+                <div
+                  class="bg-gray-100 rounded-lg shadow-md grid w-10 py-4 grid-cols-1 gap-0 text-md"
+                >
+                  <span>1</span><span>3</span><span>7</span><span>2</span
+                  ><span>4</span><span>⋮</span><span>8</span>
+                </div>
+              </div>
+
+              <!-- 2. => Input Layer -->
+              <div class="text-5xl text-white fragment" data-fragment-index="2">
+                &rarr;
+              </div>
+
+              <div
+                data-fragment-index="2"
+                class="bg-blue-200 rounded-lg w-32 h-32 shadow-md fragment text-black"
+              >
+                <div
+                  class="grid w-32 h-32 p-4 grid-cols-[repeat(6,1fr)] gap-x-1 gap-y-0 text-md"
+                >
+                  <span>4</span><span>1</span><span>7</span><span>5</span
+                  ><span>…</span><span>2</span>
+                  <span class="col-span-full text-start">9</span>
+                  <span class="col-span-full text-start">0</span>
+                  <span class="col-span-full text-start">⋮</span>
+                  <span class="col-span-full text-start">8</span>
+                </div>
+              </div>
+
+              <!-- 3. => Hidden Layers -->
+              <div class="text-5xl text-white fragment" data-fragment-index="3">
+                &rarr;
+              </div>
+
+              <div
+                class="grid place-content-center w-32 h-32 pr-4 fragment text-black"
+                data-fragment-index="3"
+              >
+                <div
+                  class="col-start-1 row-start-1 bg-gray-200/80 p-2 rounded-lg shadow-lg transform translate-3 w-32 h-32"
+                ></div>
+                <div
+                  class="col-start-1 row-start-1 bg-gray-200/80 p-2 rounded-lg shadow-lg transform translate-1.5 w-32 h-32"
+                ></div>
+                <div
+                  class="col-start-1 row-start-1 bg-gray-100 p-2 rounded-lg shadow-lg w-32 h-32 flex items-center justify-center z-10"
+                >
+                  <div
+                    class="grid grid-cols-[repeat(6,1fr)] gap-x-1 gap-y-0 text-md"
+                  >
+                    <span>3</span><span>2</span><span>6</span><span>1</span
+                    ><span>…</span><span>9</span>
+                    <span class="col-span-full text-start">2</span>
+                    <span class="col-span-full text-start">3</span>
+                    <span class="col-span-full text-start">⋮</span>
+                    <span class="col-span-full text-start">0</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4. => Output Layer -->
+              <div class="text-5xl text-white fragment" data-fragment-index="4">
+                &rarr;
+              </div>
+
+              <div
+                class="bg-blue-200 rounded-lg w-32 h-32 shadow-md fragment text-black"
+                data-fragment-index="4"
+              >
+                <div
+                  class="grid w-32 h-32 p-4 grid-cols-[repeat(6,1fr)] gap-x-1 gap-y-0 text-md"
+                >
+                  <span>6</span><span>2</span><span>9</span><span>3</span
+                  ><span>…</span><span>4</span>
+                  <span class="col-span-full text-start">0</span>
+                  <span class="col-span-full text-start">1</span>
+                  <span class="col-span-full text-start">⋮</span>
+                  <span class="col-span-full text-start">5</span>
+                </div>
+              </div>
+
+              <!-- 5. => Output Vector -->
+              <div class="text-5xl text-white fragment" data-fragment-index="5">
+                &rarr;
+              </div>
+
+              <div
+                class="fragment text-black justify-items-center"
+                data-fragment-index="5"
+              >
+                <div
+                  class="bg-gray-100 rounded-lg shadow-md grid w-10 py-4 grid-cols-1 gap-0 text-md"
+                >
+                  <span>3</span><span>9</span><span>2</span><span>5</span
+                  ><span>4</span><span>⋮</span><span>7</span>
+                </div>
+              </div>
+
+              <div
+                class="col-start-1 text-2xl text-white fragment"
+                data-fragment-index="1"
+              >
+                Input
+              </div>
+
+              <!-- 6. => Output Image -->
+              <div
+                class="col-start-9 text-5xl text-white fragment"
+                data-fragment-index="6"
+              >
+                &darr;
+              </div>
+
+              <div class="col-start-9 fragment pb-16" data-fragment-index="6">
+                <img
+                  src="/ki-katze.jpg"
+                  alt="Katze"
+                  class="rounded-lg shadow-lg w-40"
+                />
+              </div>
+            </div>
+          </section>
         </div>
       </div>
       <script type="module" src="/src/main.ts"></script>
