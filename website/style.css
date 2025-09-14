@@ -1,11 +1,11 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   min-height: 100%;
   font-family: "Poppins", sans-serif;
@@ -31,6 +31,10 @@ html, body {
 header {
   text-align: center;
   margin-bottom: 40px;
+}
+
+header p {
+  font-size: 1.7em;
 }
 
 .keyvisual {
@@ -62,13 +66,23 @@ p {
 }
 
 a {
-  color: #e0e6ff;
-  text-decoration: none;
+  color: #c5b4ff;
+  text-decoration: underline;
   font-weight: 600;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.links-section p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-top: 8px;
+  margin-bottom: 0;
+  color: #e0e6ff;
+  opacity: 0.9;
 }
 
 .links-section ul {
