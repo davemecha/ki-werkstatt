@@ -101,3 +101,13 @@ a:hover {
 .links-section li a {
   font-size: 1.2em;
 }
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.9em;
+  color: #e0e6ff;
+  opacity: 0.8;
+}
