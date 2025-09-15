@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+:root,
+body {
+  font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    135deg,
+    oklch(42.71% 0.1638 271.53) 0%,
+    oklch(20.12% 0.1384 304.73) 100%
+  );
+}
