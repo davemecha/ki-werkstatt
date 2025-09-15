@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
-import { viteSingleFile } from "vite-plugin-singlefile";
+// import { viteSingleFile } from "vite-plugin-singlefile";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 import path from "node:path";
 
@@ -9,7 +9,7 @@ const isProd = process.env.NODE_ENV === "production";
 export default defineConfig({
   plugins: [
     tailwindcss(),
-    isProd && viteSingleFile(),
+    // isProd && viteSingleFile(),
     viteStaticCopy({
       targets: [
         { src: path.resolve(__dirname, "../poster/**/*.jpeg"), dest: "poster" },
@@ -19,6 +19,14 @@ export default defineConfig({
   server: {
     fs: {
       allow: [path.resolve(__dirname), path.resolve(__dirname, "../poster")],
+    },
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, "index.html"),
+        wasIstKi: path.resolve(__dirname, "was-ist-ki.html"),
+      },
     },
   },
 });
