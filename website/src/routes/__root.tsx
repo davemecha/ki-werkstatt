@@ -6,6 +6,8 @@ import { PropsWithChildren } from 'react';
 import Header from '../components/Header';
 import appCss from '../styles.css?url';
 import '@fontsource/poppins/400.css'; // Specify weight
+import '@fontsource/poppins/600.css'; // Specify weight
+import '@fontsource/poppins/700.css'; // Specify weight
 import '@fontsource/poppins/400-italic.css'; // Specify weight and style
 
 function NotFound() {
