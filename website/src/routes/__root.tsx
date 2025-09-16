@@ -1,14 +1,14 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanstackDevtools } from '@tanstack/react-devtools'
+import { PropsWithChildren } from 'react'
 
 import Header from '../components/Header'
+import appCss from '../styles.css?url'
 
 function NotFound() {
   return <div>Seite nicht gefunden</div>
 }
-
-import appCss from '../styles.css?url'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -36,7 +36,7 @@ export const Route = createRootRoute({
   notFoundComponent: NotFound,
 })
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function RootDocument({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <head>
