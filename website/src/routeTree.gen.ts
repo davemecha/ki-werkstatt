@@ -9,55 +9,48 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as PosterRouteImport } from './routes/poster'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PosterIndexRouteImport } from './routes/poster/index'
 
-const PosterRoute = PosterRouteImport.update({
-  id: '/poster',
-  path: '/poster',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PosterIndexRoute = PosterIndexRouteImport.update({
+  id: '/poster/',
+  path: '/poster/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/poster': typeof PosterRoute
+  '/poster': typeof PosterIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/poster': typeof PosterRoute
+  '/poster': typeof PosterIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/poster': typeof PosterRoute
+  '/poster/': typeof PosterIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths: '/' | '/poster'
   fileRoutesByTo: FileRoutesByTo
   to: '/' | '/poster'
-  id: '__root__' | '/' | '/poster'
+  id: '__root__' | '/' | '/poster/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  PosterRoute: typeof PosterRoute
+  PosterIndexRoute: typeof PosterIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/poster': {
-      id: '/poster'
-      path: '/poster'
-      fullPath: '/poster'
-      preLoaderRoute: typeof PosterRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -65,12 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/poster/': {
+      id: '/poster/'
+      path: '/poster'
+      fullPath: '/poster'
+      preLoaderRoute: typeof PosterIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  PosterRoute: PosterRoute,
+  PosterIndexRoute: PosterIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
