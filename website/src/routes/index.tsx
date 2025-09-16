@@ -75,6 +75,18 @@ function App() {
                 </p>
               </li>
               <li className="bg-white/15 rounded-md p-4 mb-2.5 border border-white/20">
+                <Link
+                  to="/presentations"
+                  className="text-lg text-purple-300 underline font-semibold hover:text-white hover:no-underline"
+                >
+                  Präsentationen
+                </Link>
+                <p className="text-base leading-relaxed mt-2 mb-0 text-blue-100 opacity-90">
+                  Vorträge und Präsentationen zu verschiedenen KI-Themen für den
+                  Unterricht oder AG-Treffen.
+                </p>
+              </li>
+              <li className="bg-white/15 rounded-md p-4 mb-2.5 border border-white/20">
                 <a
                   href="https://github.com/davemecha/ki-werkstatt/tree/main/dokumente"
                   target="_blank"
