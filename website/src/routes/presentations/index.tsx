@@ -22,14 +22,12 @@ function PresentationsPage() {
         <main className="space-y-6">
           <div className="bg-white/10 rounded-lg p-6 hover:bg-white/20 transition-colors duration-300 backdrop-blur-[2px] border border-white/20">
             <h2 className="text-3xl font-bold mb-4">
-              <a
-                href="/presentations/was-ist-ki.html"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/presentations/was-ist-ki"
                 className="text-purple-300 underline font-semibold hover:text-white hover:no-underline focus:outline-none focus:ring-2 focus:ring-yellow-300 rounded"
               >
                 Was ist KI?
-              </a>
+              </Link>
             </h2>
             <p className="text-lg leading-relaxed text-blue-100 opacity-90">
               Eine Präsentation, die erklärt, was künstliche Intelligenz,

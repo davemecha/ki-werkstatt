@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PresentationsIndexRouteImport } from './routes/presentations/index'
 import { Route as PosterIndexRouteImport } from './routes/poster/index'
+import { Route as PresentationsWasIstKiRouteImport } from './routes/presentations/was-ist-ki'
 import { Route as PresentationsDatenschutzRouteImport } from './routes/presentations/datenschutz'
 
 const IndexRoute = IndexRouteImport.update({
@@ -29,6 +30,11 @@ const PosterIndexRoute = PosterIndexRouteImport.update({
   path: '/poster/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PresentationsWasIstKiRoute = PresentationsWasIstKiRouteImport.update({
+  id: '/presentations/was-ist-ki',
+  path: '/presentations/was-ist-ki',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PresentationsDatenschutzRoute =
   PresentationsDatenschutzRouteImport.update({
     id: '/presentations/datenschutz',
@@ -39,12 +45,14 @@ const PresentationsDatenschutzRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/presentations/datenschutz': typeof PresentationsDatenschutzRoute
+  '/presentations/was-ist-ki': typeof PresentationsWasIstKiRoute
   '/poster': typeof PosterIndexRoute
   '/presentations': typeof PresentationsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/presentations/datenschutz': typeof PresentationsDatenschutzRoute
+  '/presentations/was-ist-ki': typeof PresentationsWasIstKiRoute
   '/poster': typeof PosterIndexRoute
   '/presentations': typeof PresentationsIndexRoute
 }
@@ -52,18 +60,30 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/presentations/datenschutz': typeof PresentationsDatenschutzRoute
+  '/presentations/was-ist-ki': typeof PresentationsWasIstKiRoute
   '/poster/': typeof PosterIndexRoute
   '/presentations/': typeof PresentationsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/presentations/datenschutz' | '/poster' | '/presentations'
+  fullPaths:
+    | '/'
+    | '/presentations/datenschutz'
+    | '/presentations/was-ist-ki'
+    | '/poster'
+    | '/presentations'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/presentations/datenschutz' | '/poster' | '/presentations'
+  to:
+    | '/'
+    | '/presentations/datenschutz'
+    | '/presentations/was-ist-ki'
+    | '/poster'
+    | '/presentations'
   id:
     | '__root__'
     | '/'
     | '/presentations/datenschutz'
+    | '/presentations/was-ist-ki'
     | '/poster/'
     | '/presentations/'
   fileRoutesById: FileRoutesById
@@ -71,6 +91,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PresentationsDatenschutzRoute: typeof PresentationsDatenschutzRoute
+  PresentationsWasIstKiRoute: typeof PresentationsWasIstKiRoute
   PosterIndexRoute: typeof PosterIndexRoute
   PresentationsIndexRoute: typeof PresentationsIndexRoute
 }
@@ -98,6 +119,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PosterIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/presentations/was-ist-ki': {
+      id: '/presentations/was-ist-ki'
+      path: '/presentations/was-ist-ki'
+      fullPath: '/presentations/was-ist-ki'
+      preLoaderRoute: typeof PresentationsWasIstKiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/presentations/datenschutz': {
       id: '/presentations/datenschutz'
       path: '/presentations/datenschutz'
@@ -111,6 +139,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PresentationsDatenschutzRoute: PresentationsDatenschutzRoute,
+  PresentationsWasIstKiRoute: PresentationsWasIstKiRoute,
   PosterIndexRoute: PosterIndexRoute,
   PresentationsIndexRoute: PresentationsIndexRoute,
 }
