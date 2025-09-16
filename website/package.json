@@ -10,7 +10,8 @@
     "test": "vitest run",
     "lint": "eslint",
     "format": "prettier",
-    "check": "prettier --write . && eslint --fix"
+    "check": "prettier --write . && eslint --fix",
+    "preview:gh": "pnpm build && rm -rf .gh-preview && mkdir -p .gh-preview/ki-werkstatt && cp -r .output/public/* .gh-preview/ki-werkstatt/ && cp .output/public/index.html .gh-preview/ki-werkstatt/404.html && touch .gh-preview/ki-werkstatt/.nojekyll && http-server .gh-preview -p 4173 -c-1"
   },
   "dependencies": {
     "@fontsource/poppins": "^5.2.6",
@@ -35,6 +36,7 @@
     "@types/react-dom": "^19.0.3",
     "@types/reveal.js": "^5.2.0",
     "@vitejs/plugin-react": "^4.3.4",
+    "http-server": "^14.1.1",
     "jsdom": "^26.0.0",
     "prettier": "^3.5.3",
     "typescript": "^5.7.2",
