@@ -1,9 +1,16 @@
-import { createFileRoute } from '@tanstack/react-router'
-import logo from '../logo.svg'
+import { createFileRoute } from '@tanstack/react-router';
+import logo from '../logo.svg';
 
 export const Route = createFileRoute('/')({
   component: App,
-})
+  head: () => ({
+    meta: [
+      {
+        title: 'Home - KI-Werkstatt',
+      },
+    ],
+  }),
+});
 
 function App() {
   return (
@@ -35,5 +42,5 @@ function App() {
         </a>
       </header>
     </div>
-  )
+  );
 }

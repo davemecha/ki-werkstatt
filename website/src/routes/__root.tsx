@@ -1,13 +1,15 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanstackDevtools } from '@tanstack/react-devtools'
-import { PropsWithChildren } from 'react'
+import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router';
+import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
+import { TanstackDevtools } from '@tanstack/react-devtools';
+import { PropsWithChildren } from 'react';
 
-import Header from '../components/Header'
-import appCss from '../styles.css?url'
+import Header from '../components/Header';
+import appCss from '../styles.css?url';
+import '@fontsource/poppins/400.css'; // Specify weight
+import '@fontsource/poppins/400-italic.css'; // Specify weight and style
 
 function NotFound() {
-  return <div>Seite nicht gefunden</div>
+  return <div>Seite nicht gefunden</div>;
 }
 
 export const Route = createRootRoute({
@@ -21,7 +23,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'KI-Werkstatt',
       },
     ],
     links: [
@@ -34,7 +36,7 @@ export const Route = createRootRoute({
 
   shellComponent: RootDocument,
   notFoundComponent: NotFound,
-})
+});
 
 function RootDocument({ children }: PropsWithChildren) {
   return (
@@ -59,5 +61,5 @@ function RootDocument({ children }: PropsWithChildren) {
         <Scripts />
       </body>
     </html>
-  )
+  );
 }
