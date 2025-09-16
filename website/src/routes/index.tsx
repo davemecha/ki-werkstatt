@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute, Link } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/')({
   component: App,
@@ -62,13 +62,12 @@ function App() {
                 </p>
               </li>
               <li className="bg-white/15 rounded-md p-4 mb-2.5 border border-white/20">
-                <a
-                  href="../poster/ki-werkstatt-poster.html"
-                  target="_blank"
+                <Link
+                  to="/poster"
                   className="text-lg text-purple-300 underline font-semibold hover:text-white hover:no-underline"
                 >
                   Druckbares Projekt-Poster
-                </a>
+                </Link>
                 <p className="text-base leading-relaxed mt-2 mb-0 text-blue-100 opacity-90">
                   Ein anpassbares Poster im DIN A3-Format, um die AG in der
                   Schule bekannt zu machen. Einfach im Browser anpassen, als PDF
