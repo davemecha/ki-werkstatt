@@ -1,0 +1,33 @@
+@layer reset, base, reveal, tailwind-components, tailwind-utilities;
+
+@import 'reveal.js/dist/reset.css' layer(reset);
+@import 'reveal.js/dist/reveal.css' layer(reveal);
+@import 'reveal.js/dist/theme/black.css' layer(reveal);
+@import 'reveal.js/plugin/highlight/monokai.css' layer(reveal);
+
+@import 'tailwindcss';
+
+body {
+  @apply m-0;
+  font-family:
+    'Poppins',
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    'Noto Sans',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol';
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

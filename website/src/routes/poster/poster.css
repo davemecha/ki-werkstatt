@@ -1,0 +1,284 @@
+/* Poster-specific styles - scoped to prevent bleeding into other pages */
+
+body:has(.poster-container) {
+  min-height: 100dvh;
+  max-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  margin: 0;
+}
+
+.poster-container {
+  min-height: 0;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+
+.poster-container #poster {
+  width: 297mm;
+  height: 420mm;
+  background: linear-gradient(
+    135deg,
+    oklch(42.71% 0.1638 271.53) 0%,
+    oklch(20.12% 0.1384 304.73) 100%
+  );
+  position: relative;
+  margin: 0 auto;
+  padding: 20mm;
+  padding-top: 20mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #ffffff;
+  box-shadow: 0 5mm 10mm rgba(0, 0, 0, 0.1);
+  border-radius: 5mm;
+  overflow: hidden;
+}
+
+.poster-container .poster-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8mm;
+  height: 100%;
+}
+
+.poster-container .header-section {
+  text-align: center;
+  margin-bottom: 5mm;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.poster-container .headline {
+  width: 120mm;
+  height: 80mm;
+  background: url('/ki-werkstatt.jpeg') center/cover no-repeat;
+  margin-bottom: 4mm;
+  filter: drop-shadow(0 1mm 2mm rgba(0, 0, 0, 0.3));
+}
+
+.poster-container .subline {
+  font-style: italic;
+  font-size: 10mm;
+  color: #e0e6ff;
+  font-weight: 400;
+  text-shadow: 0 0.5mm 1mm rgba(0, 0, 0, 0.2);
+}
+
+.poster-container .subline + p {
+  padding-top: 6mm;
+  font-size: 8mm;
+  color: #e0e6ff;
+  font-weight: 400;
+  text-shadow: 0 0.5mm 1mm rgba(0, 0, 0, 0.2);
+}
+
+.poster-container .content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 9mm;
+  flex: 1;
+}
+
+.poster-container .content-block {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 5mm;
+  padding: 7.5mm;
+  backdrop-filter: blur(2mm);
+  box-shadow: 0 2mm 8mm rgba(0, 0, 0, 0.1);
+  border: 0.25mm solid rgba(255, 255, 255, 0.2);
+}
+
+.poster-container .content-block h3 {
+  font-size: 8mm;
+  font-weight: 700;
+  margin-bottom: 6mm;
+  color: #ffffff;
+  text-shadow: 0 0.5mm 1mm rgba(0, 0, 0, 0.2);
+}
+
+.poster-container .content-block ul {
+  list-style: none;
+  font-size: 6mm;
+  line-height: 1.5;
+}
+
+.poster-container .content-block li {
+  margin-bottom: 2mm;
+  padding-left: 11mm;
+  position: relative;
+}
+
+.poster-container .content-block li::before {
+  content: '✨';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 6mm;
+}
+
+.poster-container .process-section {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.poster-container .process-section h3 {
+  font-size: 9mm;
+  margin-bottom: 4mm;
+  filter: drop-shadow(0 1mm 2mm rgba(0, 0, 0, 0.3));
+}
+
+.poster-container .process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8mm;
+  margin-top: 5mm;
+}
+
+.poster-container .process-step {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4mm;
+  padding: 6mm;
+  backdrop-filter: blur(2mm);
+  box-shadow: 0 1.5mm 6mm rgba(0, 0, 0, 0.1);
+  border: 0.25mm solid rgba(255, 255, 255, 0.3);
+}
+
+.poster-container .process-step .icon {
+  font-size: 14mm;
+  margin-bottom: 4mm;
+}
+
+.poster-container .process-step h4 {
+  font-size: 7mm;
+  line-height: 1.4;
+  font-weight: 600;
+  margin-bottom: 3mm;
+  color: #ffffff;
+}
+
+.poster-container .process-step p {
+  font-size: 5mm;
+  color: #e0e6ff;
+  line-height: 1.4;
+}
+
+.poster-container .footer-section {
+  text-align: center;
+  margin-top: 5mm;
+}
+
+.poster-container .footer-notice {
+  font-size: 7mm;
+  color: #e0e6ff;
+  opacity: 0.8;
+}
+
+/* Unstyle inputs to inherit surrounding text completely */
+.poster-container input[type='text'],
+.poster-container input[type='search'],
+.poster-container input:not([type]) {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  outline: none;
+  display: inline;
+  width: auto;
+  min-width: 10ch;
+  vertical-align: baseline;
+
+  /* Inherit all relevant text styles */
+  color: inherit;
+  caret-color: currentColor;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-shadow: inherit;
+  text-align: inherit;
+}
+
+.poster-container input[type='text']:focus,
+.poster-container input[type='search']:focus,
+.poster-container input:not([type]):focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Ensure placeholder text matches surrounding styles */
+.poster-container input::placeholder {
+  color: inherit;
+  opacity: 0.7; /* keep slight distinction if placeholders are used */
+}
+
+/* Prevent inputs inside the grid from expanding columns */
+.poster-container .content-grid input[type='text'],
+.poster-container .content-grid input[type='search'],
+.poster-container .content-grid input:not([type]) {
+  min-width: 0; /* override global min-width to allow shrinking */
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Floating save button (screen only) */
+.poster-container .save-btn {
+  padding: 10px 16px;
+}
+
+.poster-container .save-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Print styles */
+@media print {
+  @page {
+    size: A3 portrait;
+    margin: 0;
+  }
+
+  header,
+  [data-testid='tanstack_devtools'] {
+    display: none;
+  }
+
+  ,
+  .poster-container html,
+  .poster-container body {
+    width: 297mm;
+    height: 420mm;
+    background: white !important;
+  }
+
+  .poster-container #poster {
+    /* width: 297mm; */
+    /* height: 420mm; */
+    transform: none !important;
+    margin: 0 !important;
+    /* padding: 40mm; */
+    box-shadow: none;
+    border-radius: 0;
+    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  }
+
+  .poster-container .content-block,
+  .poster-container .process-step {
+    background: rgba(255, 255, 255, 0.1) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+/* Responsive scaling */
+@media screen {
+  .poster-container #poster {
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+  }
+}
