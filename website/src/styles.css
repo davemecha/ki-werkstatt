@@ -1,3 +1,10 @@
+@layer reset, base, reveal, tailwind-components, tailwind-utilities;
+
+@import 'reveal.js/dist/reset.css' layer(reset);
+@import 'reveal.js/dist/reveal.css' layer(reveal);
+@import 'reveal.js/dist/theme/black.css' layer(reveal);
+@import 'reveal.js/plugin/highlight/monokai.css' layer(reveal);
+
 @import 'tailwindcss';
 
 body {
