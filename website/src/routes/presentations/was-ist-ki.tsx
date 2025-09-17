@@ -65,6 +65,19 @@ function RouteComponent() {
             </p>
           </div>
         </div>
+        <aside className="notes" data-markdown>{`
+### Folie 1: Ablauf
+
+* Begrüßung
+  * Selbstvorstellung
+  * Jeder soll sich vorstellen + Erwartungen / Motivation
+* Einführung & Organisatorisches
+  * Ggf. Materialien austeilen (Infoblatt, Einverständniserklärung für Eltern)
+  * WICHTIG: Die unterschriebene Einverständniserklärung zum nächsten Termin mitbringen. Ohne diese können wir bestimmte Dinge (eigene Accounts, Nutzung von externen Tools) noch nicht machen.
+  * Respektvoller Umgang, jede Frage ist willkommen.
+* 3 Phasen:
+  * Phasen kurz erklären (Impuls, Diskussion, Experimente)
+`}</aside>
       </section>
 
       {/* <!-- Was ist KI? - Concentric Circles --> */}
@@ -108,6 +121,17 @@ function RouteComponent() {
             </div>
           </div>
         </div>
+        <aside className="notes" data-markdown>{`
+### Folie 2: Was ist KI
+
+* Frage auf Folie
+  * Kinder antworten lassen
+  * Was ist KI: KI bezeichnet (vereinfacht) Computersysteme, die intelligentes Verhalten zeigen. Das ist oft gelernt, muss aber nicht.
+* Kreise
+  * Kreis 1 KI: KI ist ein großes Feld der Informatik. Was wir heute sehen, ist nur ein kleiner Teil.
+  * Kreis 2 KNNs: Neuronale Netze sind ein Teil von KI, die vom Gehirn inspiriert sind und lernen können.
+  * Kreis 3 LLMs: LLMs sind ein Teil von KNNs, die besonders gut sind, Sprache zu verstehen. Sie (und ihre Ableger) sind das, was wir heute umgeangssprachlich meist unter KI verstehen.
+`}</aside>
       </section>
 
       {/* <!-- Neural Network Visualization --> */}
@@ -281,6 +305,20 @@ function RouteComponent() {
             />
           </div>
         </div>
+        <aside className="notes" data-markdown>{`
+### Folie 3: Was ist KI - Neuronales Netz
+
+* Soll KI etwas entzaubern
+* Diagramm
+  1. Eingabetext "Male eine Katze"
+  2. Umwandlung in Liste von Zahlen (Vektor)
+  3. Multiplikation mit Tabelle (Matrix) von Zahlen (Verbindungen zwischen Neuronen) - 
+    * Matrixmultiplikation ist im Endeffekt Multiplikation und Addition von vielen Zahlen nach einem bestimmten Verfahren.
+  4. und 
+  5. Mehrfache Multiplikation solcher Matrizen hintereinander (Mehrere Schichten von Neuronen) - Matrizen mit vielen Millionen Zahlen
+  6. Ergebnisliste von Zahlen (Vektor)
+  7. Interpretation der Zahlen als Bild (Katze)
+`}</aside>
       </section>
 
       {/* <!-- Learning --> */}
@@ -309,6 +347,16 @@ function RouteComponent() {
             </ul>
           </li>
         </ul>
+        <aside className="notes" data-markdown>{`
+### Folie 4: Was ist KI - Lernen
+
+* Die Zahlen in den Matritzen von eben werden durch ein Verfahren gefunden, dass man "Lernen" oder "Training" nennt. Ein Verfahren geht ungefähr so:
+  * Erst zufällige Zahlen und bei Eingabe ein zufälliges Ergebnis (bspw. verrauschtes Bild)
+  * Dann wird das Ergebnis mit dem gewünschten Ergebnis verglichen und die Zahlen in den Matritzen nach bestimmten Regeln angepasst und noch mal versucht. Das wird so oft wiederholt, bis das Ergebnis zur Eingabe möglichst gut passt (viele tausendmal).
+* Am Ende kann die KI quasi Muster erkennen
+  * wie soll eine Katze aussehen
+  * Was ist das nächste Wort in einem Satz - Das machen LLMs, wie Chat GPT. Also nach der Eingabe wird Wort für Wort vorgeschlagen und so entsteht eine Antwort.
+`}</aside>
       </section>
 
       {/* <!-- Prompts --> */}
@@ -342,9 +390,94 @@ function RouteComponent() {
             </p>
           </div>
         </div>
+        <aside className="notes" data-markdown>{`
+### Folie 5: Was ist KI - Prompt
+
+* "Prompt" ist die Eingabe in ein LLM, also bspw. das was man bei Chat GPT eingibt.
+* Beispiele
+* WICHTIG: Über den Prompt steuert man DAS VERHALTEN der KI
+  * Bsp: "Du bist Mathelehrer, hilf mir bei Mathe..." ist was anderes als "Du bist Deutschlehrer, hilf mir bei Mathe..."
+  * Hinweis: KIs sind keine fühlenden Wesen, auch wenn sie sich so verhalten. Sie werden durch einen Prompt menschlich gemacht, indem sie mit Prompts zu menschliche Verhaltensweisen gebracht werden.
+`}</aside>
       </section>
 
-      <EndSlide />
+      <EndSlide
+        notes={`
+### Folie 6: Diskussion & Experimente
+
+Prompts als Demos mit den Tools: Google AI Studio, Gemini, Chat GPT
+
+#### Prompt - Satz beenden lassen:
+
+*Lass uns ein Spiel spielen. Rate das Satzende in folgendem Text. Antworte nur mit dem Satzende:*
+
+1. *Du bist ein toller*
+2. *Die Sonne scheint. Ich brauche*
+3. *Es regnet. Ich brauche*
+
+* **Ziel:** Hinterfragen, was ist die wahrscheinlichste Antwort. Vorher Teilnehmer fragen.
+* **Tool, Modell:** AI Studio - Gemini Flash ohne Thinking
+* **Variationen:**
+  * Mehrfach ausführen. Gewisse Antworten kommen immer wieder, manche Antworten nie. => Häufig in Trainingsdaten. das Wahrscheinlichste (nicht unbedingt richtig). Bei "Die Sonne scheint. Ich brauche" kommt u.U. oft "einen Regenschirm".
+  * Mit Temperatur Slider spielen. Höhere Temperatur heißt: mehr Kreativität, aber auch eher unsinnige Antworten. - Mehr Zufall in der Antwort. Ist lustig damit zu spielen. Können Kidner selber machen. - Niedrigere Temperatur: öfter die gleiche Antwort.
+
+#### Prompt - Rolle einnehmen 1:
+
+1. *Du bist ein Physiker. Bitte beende folgenden Satz: Ein schwarzes Loch ist*
+2. *Du bist ein Komiker. Bitte beende folgenden Satz: Ein schwarzes Loch ist*
+
+* **Ziel:** Effekt unterschiedlicher Rollen vergegenwärtigen. Vor jedem Prompt Teilnehmer fragen, was sie denken, wie eine Antwort aussehen könnte. 
+* **Tool, Modell:** AI Studio - Gemini Flash ohne Thinking
+
+#### Prompt - Rolle einnehmen 2:
+
+*Versetze dich in ein ??? jähriges Mädchen. Schreibe mir ein Gedicht*
+
+* **Ziel:** Kleine Änderungen, große Wirkung. Alter variieren, bspw. 8 Jahre und 15 Jahre.
+* **Tool, Modell:** AI Studio - Gemini Flash ohne Thinking
+* **Ergebnis:**
+  * 8 Jahre: Ggf. nicht wirklich 8-Jährige Sprache. Aber wahrscheinlich 8-Jährige Lebensrealität von den Themen.
+  * 15 Jahre: Sprachlich ggf. passender. Passt zum Leben eines 15-Jährigen Kindes.
+  * Sehr kleine Unterschiede im Text eines Prompts kann große Unterschiede in der Antwort machen, auch wenn es nicht so offensichtlich ist, wie hier mit dem Alter.
+  * Intelligentere Modelle können noch deutlich treffendere Antworten erzeugen, brauchen aber länger.
+
+#### Prompt - Bias:
+
+*Welches Tier findest du am schönsten? Antworte nur mit einem Wort.*
+
+* **Ziel:** Nicht so offensichtlichen Bias im Modell aufzeigen
+* **Tool, Modell:** AI Studio - Gemini Flash mit Thinking
+* **Ergebnis:** 
+  * Bspw. Pfau, Katze, Schwan
+  * Mit Temperatur spielen...
+  * Modelle haben also quasi "Präferenzen". Pfaue bspw. werden häufig mit Schönheit assoziiert, also ist die Antwort wahrscheinlich. Aber vielleicht hätte man selbst nicht sofort daran gedacht. Solche Präferenzen gibt es in allen KIs und sie können unbemerkt starke Auswirkungen haben und menschliche Vorurteile reproduzieren und verstärken.
+
+#### Prompt - Lernen in der Schule
+
+*Du bist ein super Biolehrer und kennst dich super mit Bio für 8. Klasse Gymnasium aus und kannst auf besonders kreative Weise Schülern Bio beibringen. Hilf mir beim Bio Lernen. 8. Klasse, Thema Evolution. Kannst du ein Multipl Choice Quizz mit mir machen? Insgesamt 10 Fragen, immer eine Frage stellen.*
+
+* **Ziel:** Inspirieren, dass man nicht nur einfache Fragen stellen kann, sondern auch mehrstufige Abläufe durchspielen kann, wie ein Quiz.
+* **Tool, Modell:** Egal. Bspw. Gemini oder Chat GPT
+* **Variationen:** Thema ändern, je nach Teilnehmerschaft
+* **Ergebnis:** Das kann einem beim Lernen helfen udn gleichzeitig Spaß machen. Man muss dem Modell dazu recht genau sagen, was man lernen muss.
+
+#### Prompt - Über sich hinauswachsen:
+
+*Programmiere mir ein Galgenmännchen Spiel. Jede Runde denkst du dir ein deutsches Wort aus, das ich erraten muss. Es soll schön aussehen und Spaß machen. Der Galgen und das Männchen sollen durch Fragen erspielt werden.*
+
+* **Ziel:** Was programmieren, ohne programmieren zu können
+* **Tool, Modell:** Gemini, Canvas aktivieren!!!
+* **Ergebnis:** Ein spielbares Galgenmännchen Spiel, direkt im Browser.
+* **Variationen:** einfach durch weitere Prompts das Spiel noch etwas verbessern. Design, Schwierigkeitsgrad, Sprache, ...
+
+### Viel Spaß beim Experimentieren
+
+* Programmiert was mit Gemini
+* Probiert Prompts zum Lernen aus
+* Was euch sonst so einfällt
+
+`}
+      />
     </Presentation>
   );
 }
