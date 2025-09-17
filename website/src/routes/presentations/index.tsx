@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import { createFileRoute, Link } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/presentations/')({
@@ -15,8 +16,23 @@ function PresentationsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[oklch(42.71%_0.1638_271.53)] to-[oklch(20.12%_0.1384_304.73)] text-white font-['Poppins'] p-10">
       <div className="max-w-[900px] mx-auto bg-white/10 rounded-lg p-10 backdrop-blur-[5px] border border-white/20">
-        <header className="text-center mb-14">
+        <header className="text-center mb-14 text-white ">
           <h1 className="text-5xl font-bold mb-6">Präsentationen</h1>
+          <p className="text-lg leading-relaxed opacity-90 mb-4">
+            Präsentationen für die Phasen Impuls und ggf. Diskussion der AG. -
+            Die Präsentationen können direkt ausgeführt werden.
+          </p>
+          <p className="text-base leading-relaxed text-start opacity-80">
+            <strong>Keybindings:</strong>
+            <br />
+            Vollbild: F
+            <br />
+            Übersicht: Esc oder O
+            <br />
+            Speaker-View/Notizen: S
+            <br />
+            Navigation: Pfeiltasten (links, rechts), Leertaste oder Swipe.
+          </p>
         </header>
 
         <main className="space-y-6">
@@ -51,14 +67,7 @@ function PresentationsPage() {
           </div>
         </main>
 
-        <footer className="text-center mt-10 pt-5 border-t border-white/20 text-sm text-blue-100 opacity-80">
-          <Link
-            to="/"
-            className="text-purple-300 underline font-semibold hover:text-white hover:no-underline"
-          >
-            ← Zurück zur Startseite
-          </Link>
-        </footer>
+        <Footer />
       </div>
     </div>
   );

@@ -34,11 +34,11 @@ function RouteComponent() {
             />
           </div>
         </div>
-        <aside className="notes">
-          Daten sind viel mehr als Name und Adresse. Schon eure Stimme oder ein
-          Foto verraten etwas. Im Hintergrund sieht man vielleicht euer Zimmer.
-          Online erkennt man auch automatisch, wo ihr seid oder welches Gerät
-          ihr benutzt.
+        <aside className="notes" data-markdown>
+          Personenbezogene Daten sind viel mehr als Name und Adresse. Schon eure
+          Stimme oder ein Foto verraten etwas. Im Hintergrund sieht man
+          vielleicht euer Zimmer. Online erkennt man auch automatisch, wo ihr
+          seid oder welches Gerät ihr benutzt.
         </aside>
       </section>
 
@@ -57,12 +57,16 @@ function RouteComponent() {
           <div>
             <ul className="list-disc text-4xl space-y-8 text-left">
               <li className="fragment">Ihr entscheidet, was ihr teilt</li>
-              <li className="fragment">Kleine Infos = großes Bild</li>
+              <li className="fragment">
+                unscheinbare Infos
+                <br />
+                &rArr; genaues Bild
+              </li>
               <li className="fragment">Daten = Macht</li>
             </ul>
           </div>
         </div>
-        <aside className="notes">
+        <aside className="notes" data-markdown>
           Ihr bestimmt, was ihr weitergebt. Aber man darf nicht unterschätzen,
           wie stark kleine Infos zusammengesetzt werden können. Aus scheinbar
           harmlosen Daten entsteht ein ziemlich genaues Bild von euch. Wer Daten
@@ -78,7 +82,11 @@ function RouteComponent() {
         <div className="grid grid-cols-2 gap-8 items-center">
           <div>
             <ul className="list-disc text-4xl space-y-8 text-left">
-              <li className="fragment">„Kostenlos“ = oft bezahlt mit Daten</li>
+              <li className="fragment">
+                „Kostenlos“
+                <br />
+                &rArr; mit Daten bezahlt
+              </li>
               <li className="fragment">
                 Geschäftsmodell prüfen: womit verdient die Firma?
               </li>
@@ -95,13 +103,14 @@ function RouteComponent() {
             />
           </div>
         </div>
-        <aside className="notes">
+        <aside className="notes" data-markdown>{`
           Bei kostenlosen Diensten bezahlt ihr meist mit euren Daten. Darum
           lohnt sich die Frage: Womit verdient die Firma eigentlich ihr Geld?
-          Viele nutzen Daten, um ihre KI zu trainieren. Das kann gefährlich
-          sein: In manchen Fällen haben KIs später zufällig persönliche Infos
-          ausgespuckt, die im Training gelandet sind.
-        </aside>
+          Viele nutzen Daten, um ihre KI zu trainieren. 
+          
+          **Das kann gefährlich sein:** In manchen Fällen haben KIs später 
+          zufällig persönliche Infos ausgespuckt, die im Training gelandet sind.
+        `}</aside>
       </section>
 
       {/* <!-- Folie 4 --> */}
@@ -126,23 +135,25 @@ function RouteComponent() {
                 China: Staat hat überall Mitspracherecht
               </li>
               <li className="fragment">
-                Firmen = wollen Geld; Staaten = haben politische Ziele
+                Firmen: wollen Geld
+                <br />
+                Staaten: haben politische Ziele
               </li>
             </ul>
           </div>
         </div>
-        <aside className="notes">
-          Es gibt Unterschiede, aber man darf nicht pauschalisieren: In der EU
-          gibt es klare Datenschutzgesetze. In den USA hängt es viel mehr von
-          den Firmen selbst ab. In China dagegen hat der Staat bei jedem
-          Unternehmen Mitspracherecht und nutzt Systeme gezielt, um Meinungen zu
-          lenken. Firmen wollen in erster Linie Geld verdienen – das kann man
-          kritisch sehen, aber es ist wenigstens klar. Staaten haben oft
-          zusätzliche Interessen, die nicht immer zu unseren Werten passen.
-          Wichtig ist: Ihr habt die Freiheit, selbst zu entscheiden, welchen
-          Diensten ihr vertraut – solange euch bewusst ist, wie sie mit euren
-          Daten umgehen.
-        </aside>
+        <aside className="notes" data-markdown>{`
+Es gibt Unterschiede, aber man darf nicht pauschalisieren: 
+
+* In der EU gibt es vergleichsweise strenge Datenschutzgesetze. 
+* In den USA hängt es viel mehr von den Firmen selbst ab.
+* In China dagegen hat der Staat bei jedem Unternehmen starkes Mitspracherecht und nutzt Systeme gezielt, um Meinungen zu lenken. 
+* Firmen wollen in erster Linie Geld verdienen – das kann man kritisch sehen, aber es ist zumindest bekannt.
+* Staaten haben oft zusätzliche Interessen, die nicht immer zu unseren Werten passen.
+
+**Wichtig ist:** Nutzt eure Freiheit, selbst zu entscheiden, welchen Diensten ihr vertraut.
+**Macht euch bewusst, wie sie mit euren Daten umgehen könnten**.
+          `}</aside>
       </section>
 
       {/* <!-- Folie 5 --> */}
@@ -154,10 +165,12 @@ function RouteComponent() {
           <div>
             <ul className="list-disc text-3xl space-y-6 text-left">
               <li className="fragment">
-                Einmal geteilt = schwer zurückzuholen
+                Einmal geteilt =&gt; schwer zurückzuholen
               </li>
-              <li className="fragment">Welche Daten müssen wirklich rein?</li>
-              <li className="fragment">Gibt es bessere Alternativen?</li>
+              <li className="fragment">Welche Daten müssen wirklich sein?</li>
+              <li className="fragment">
+                Gibt es bessere Alternativen? (z.B. andere Anbieter)
+              </li>
               <li className="fragment">
                 Würde ich das auch Freunden oder Fremden erzählen?
               </li>
@@ -170,13 +183,19 @@ function RouteComponent() {
             />
           </div>
         </div>
-        <aside className="notes">
-          Wenn Daten einmal im Netz sind, lassen sie sich kaum zurückholen.
-          Deshalb: Welche Infos sind wirklich nötig, um die KI zu nutzen? Gibt
-          es eine andere Möglichkeit? Und stellt euch immer die Frage: Würde ich
-          das auch Freunden erzählen? Oder jemandem auf der Straße? Wenn nicht,
-          dann lieber auch nicht mit einer KI oder einem Unternehmen teilen.
-        </aside>
+        <aside className="notes" data-markdown>{`
+Wenn Daten einmal im Netz sind, lassen sie sich kaum zurückholen.
+
+**Deshalb:** 
+
+* Welche Infos sind wirklich nötig, um die KI zu nutzen? 
+* Gibt es eine andere Möglichkeit? 
+
+*Und stellt euch immer die Frage:*
+
+**Würde ich das auch Freunden erzählen? Oder jemandem fremden auf der Straße?** 
+Wenn nicht, dann lieber auch nicht mit einer KI oder einem Unternehmen teilen.
+        `}</aside>
       </section>
       <EndSlide />
     </Presentation>
