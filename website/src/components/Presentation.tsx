@@ -37,7 +37,7 @@ export default function Presentation({ children }: PropsWithChildren) {
   return (
     <div
       ref={revealContainerRef}
-      className="reveal [body:has(&)_header]:fixed [body:has(&)_header]:top-0 [body:has(&)_header]:left-0 [body:has(&)_header]:w-full [body:has(&)_header]:z-50 [body:has(&)_header]:opacity-0 [body:has(&)_header]:hover:opacity-50"
+      className="reveal [body:has(&)]:bg-none [body:has(&)_header]:fixed [body:has(&)_header]:top-0 [body:has(&)_header]:left-0 [body:has(&)_header]:w-full [body:has(&)_header]:z-50 [body:has(&)_header]:opacity-0 [body:has(&)_header]:hover:opacity-50"
     >
       <div className="slides">{children}</div>
     </div>
