@@ -4,6 +4,8 @@
 
 Dieses öffentliche Repository dient als Inspirations- und Arbeitsgrundlage für alle, die an Schulen oder in anderen Bildungskontexten eine ähnliche Arbeitsgemeinschaft (AG) zur Künstlichen Intelligenz durchführen möchten. Es dokumentiert Materialien, Vorlagen und Erkenntnisse aus der Umsetzung.
 
+Für alle, die die AG umsetzen möchten, gibt es eine [Website](https://davemecha.github.io/ki-werkstatt/) mit Informationen, druckbarem Poster und Präsentationen für die AG.
+
 ## Ziel der AG (Kulturbildung)
 
 Die AG versteht Kulturbildung als Prozess: In einer altersübergreifenden Gruppe wird experimentiert, gemeinsam reflektiert und das Spektrum von Möglichkeiten, Chancen und Risiken von KI ausgelotet.
