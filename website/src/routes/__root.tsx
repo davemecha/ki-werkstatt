@@ -25,6 +25,10 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
+        name: 'google-site-verification',
+        content: '4FpOEYlnZwdoWYDmOe01I69jPXLibEFl4IErrJi0eXw',
+      },
+      {
         title: 'KI-Werkstatt',
       },
     ],
