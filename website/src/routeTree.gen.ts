@@ -15,6 +15,7 @@ import { Route as PosterIndexRouteImport } from './routes/poster/index'
 import { Route as DocsIndexRouteImport } from './routes/docs/index'
 import { Route as PresentationsWasIstKiRouteImport } from './routes/presentations/was-ist-ki'
 import { Route as PresentationsDatenschutzRouteImport } from './routes/presentations/datenschutz'
+import { Route as DocsSlugRouteImport } from './routes/docs/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -47,9 +48,15 @@ const PresentationsDatenschutzRoute =
     path: '/presentations/datenschutz',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DocsSlugRoute = DocsSlugRouteImport.update({
+  id: '/docs/$slug',
+  path: '/docs/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/docs/$slug': typeof DocsSlugRoute
   '/presentations/datenschutz': typeof PresentationsDatenschutzRoute
   '/presentations/was-ist-ki': typeof PresentationsWasIstKiRoute
   '/docs': typeof DocsIndexRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/docs/$slug': typeof DocsSlugRoute
   '/presentations/datenschutz': typeof PresentationsDatenschutzRoute
   '/presentations/was-ist-ki': typeof PresentationsWasIstKiRoute
   '/docs': typeof DocsIndexRoute
@@ -67,6 +75,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/docs/$slug': typeof DocsSlugRoute
   '/presentations/datenschutz': typeof PresentationsDatenschutzRoute
   '/presentations/was-ist-ki': typeof PresentationsWasIstKiRoute
   '/docs/': typeof DocsIndexRoute
@@ -77,6 +86,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/docs/$slug'
     | '/presentations/datenschutz'
     | '/presentations/was-ist-ki'
     | '/docs'
@@ -85,6 +95,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/docs/$slug'
     | '/presentations/datenschutz'
     | '/presentations/was-ist-ki'
     | '/docs'
@@ -93,6 +104,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/docs/$slug'
     | '/presentations/datenschutz'
     | '/presentations/was-ist-ki'
     | '/docs/'
@@ -102,6 +114,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DocsSlugRoute: typeof DocsSlugRoute
   PresentationsDatenschutzRoute: typeof PresentationsDatenschutzRoute
   PresentationsWasIstKiRoute: typeof PresentationsWasIstKiRoute
   DocsIndexRoute: typeof DocsIndexRoute
@@ -153,11 +166,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PresentationsDatenschutzRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/docs/$slug': {
+      id: '/docs/$slug'
+      path: '/docs/$slug'
+      fullPath: '/docs/$slug'
+      preLoaderRoute: typeof DocsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DocsSlugRoute: DocsSlugRoute,
   PresentationsDatenschutzRoute: PresentationsDatenschutzRoute,
   PresentationsWasIstKiRoute: PresentationsWasIstKiRoute,
   DocsIndexRoute: DocsIndexRoute,
