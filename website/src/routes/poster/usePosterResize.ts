@@ -1,4 +1,5 @@
-import { RefObject, useLayoutEffect } from 'react';
+import { useLayoutEffect } from 'react';
+import type { RefObject } from 'react';
 
 export function usePosterResize(posterRef: RefObject<HTMLDivElement | null>) {
   useLayoutEffect(() => {

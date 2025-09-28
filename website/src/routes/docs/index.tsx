@@ -1,6 +1,6 @@
-import Footer from '@/components/Footer';
 import { Link, createFileRoute } from '@tanstack/react-router';
 import { documents } from './docs.data';
+import Footer from '@/components/Footer';
 
 export const Route = createFileRoute('/docs/')({
   component: DokumentePage,
@@ -25,8 +25,10 @@ function DokumentePage() {
         <header className="text-center mb-14 text-white">
           <h1 className="text-5xl font-bold mb-6">Dokumente</h1>
           <p className="text-lg leading-relaxed opacity-90">
-            Alle Materialien, Formulare und Infoblätter zum Start der KI-Werkstatt an deiner Schule.
-            Öffne die Dokumente, um die Inhalte direkt im Browser zu lesen oder lade sie zur weiteren Anpassung herunter.
+            Alle Materialien, Formulare und Infoblätter zum Start der
+            KI-Werkstatt an deiner Schule. Öffne die Dokumente, um die Inhalte
+            direkt im Browser zu lesen oder lade sie zur weiteren Anpassung
+            herunter.
           </p>
         </header>
 
@@ -39,8 +41,12 @@ function DokumentePage() {
               <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                 <div className="space-y-3">
                   <h2 className="text-3xl font-bold">{document.title}</h2>
-                  <p className="text-lg leading-relaxed text-blue-100 opacity-90">{document.description}</p>
-                  <p className="text-sm uppercase tracking-wide text-white/60">{document.note}</p>
+                  <p className="text-lg leading-relaxed text-blue-100 opacity-90">
+                    {document.description}
+                  </p>
+                  <p className="text-sm uppercase tracking-wide text-white/60">
+                    {document.note}
+                  </p>
                 </div>
                 <div className="flex flex-shrink-0 gap-3">
                   <Link

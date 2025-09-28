@@ -7,5 +7,10 @@
   },
   "files.readonlyInclude": {
     "**/routeTree.gen.ts": true
+  },
+  "eslint.workingDirectories": ["website"],
+  "eslint.experimental.useFlatConfig": true,
+  "eslint.options": {
+    "cwd": "${workspaceFolder}/website"
   }
 }

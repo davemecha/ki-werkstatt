@@ -22,12 +22,12 @@ export type DocumentData = DocumentMeta & {
 const markdownContentModules = import.meta.glob(
   '../../content/dokumente/*.md',
   { as: 'raw', eager: true },
-) as Record<string, string>;
+);
 
 const markdownAssetModules = import.meta.glob('../../content/dokumente/*.md', {
   as: 'url',
   eager: true,
-}) as Record<string, string>;
+});
 
 const slugFromPath = (path: string): DocumentSlug => {
   const segments = path.split('/');
