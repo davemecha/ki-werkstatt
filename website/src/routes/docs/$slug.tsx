@@ -1,9 +1,9 @@
-import Footer from '@/components/Footer';
 import { Link, createFileRoute, notFound } from '@tanstack/react-router';
-import type { Components } from 'react-markdown';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { getDocumentBySlug } from './docs.data';
+import type { Components } from 'react-markdown';
+import Footer from '@/components/Footer';
 
 const markdownComponents: Components = {
   h1: ({ node, ...props }) => (
@@ -31,26 +31,12 @@ const markdownComponents: Components = {
       {...props}
     />
   ),
-  code: ({ node, inline, className, children, ...props }) => {
-    if (inline) {
-      return (
-        <code
-          className="rounded bg-white/10 px-1 py-0.5 text-sm text-yellow-100"
-          {...props}
-        >
-          {children}
-        </code>
-      );
-    }
-
-    return (
-      <pre className="mt-6 overflow-x-auto rounded-lg bg-black/30 p-4 text-sm text-white">
-        <code className={className} {...props}>
-          {children}
-        </code>
-      </pre>
-    );
-  },
+  pre: ({ node, ...props }) => (
+    <pre
+      {...props}
+      className="mt-6 overflow-x-auto rounded-lg bg-black/30 p-4 text-sm text-white"
+    />
+  ),
   strong: ({ node, ...props }) => (
     <strong className="font-semibold text-white" {...props} />
   ),
@@ -92,7 +78,7 @@ export const Route = createFileRoute('/docs/$slug')({
 
     if (!document) {
       throw notFound({
-        message: `Dokument mit dem Namen "${params.slug}" wurde nicht gefunden.`,
+        data: `Dokument mit dem Namen "${params.slug}" wurde nicht gefunden.`,
       });
     }
 
