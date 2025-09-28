@@ -17,6 +17,10 @@ export default function Header() {
           <div className="px-2 font-semibold">
             <Link to="/presentations">Präsentationen</Link>
           </div>
+
+          <div className="px-2 font-semibold">
+            <Link to="/dokumente">Dokumente</Link>
+          </div>
         </nav>
       </header>
     </>

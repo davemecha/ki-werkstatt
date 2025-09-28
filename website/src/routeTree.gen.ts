@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PresentationsIndexRouteImport } from './routes/presentations/index'
 import { Route as PosterIndexRouteImport } from './routes/poster/index'
+import { Route as DocsIndexRouteImport } from './routes/docs/index'
 import { Route as PresentationsWasIstKiRouteImport } from './routes/presentations/was-ist-ki'
 import { Route as PresentationsDatenschutzRouteImport } from './routes/presentations/datenschutz'
 
@@ -30,6 +31,11 @@ const PosterIndexRoute = PosterIndexRouteImport.update({
   path: '/poster/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DocsIndexRoute = DocsIndexRouteImport.update({
+  id: '/docs/',
+  path: '/docs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PresentationsWasIstKiRoute = PresentationsWasIstKiRouteImport.update({
   id: '/presentations/was-ist-ki',
   path: '/presentations/was-ist-ki',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/presentations/datenschutz': typeof PresentationsDatenschutzRoute
   '/presentations/was-ist-ki': typeof PresentationsWasIstKiRoute
+  '/docs': typeof DocsIndexRoute
   '/poster': typeof PosterIndexRoute
   '/presentations': typeof PresentationsIndexRoute
 }
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/presentations/datenschutz': typeof PresentationsDatenschutzRoute
   '/presentations/was-ist-ki': typeof PresentationsWasIstKiRoute
+  '/docs': typeof DocsIndexRoute
   '/poster': typeof PosterIndexRoute
   '/presentations': typeof PresentationsIndexRoute
 }
@@ -61,6 +69,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/presentations/datenschutz': typeof PresentationsDatenschutzRoute
   '/presentations/was-ist-ki': typeof PresentationsWasIstKiRoute
+  '/docs/': typeof DocsIndexRoute
   '/poster/': typeof PosterIndexRoute
   '/presentations/': typeof PresentationsIndexRoute
 }
@@ -70,6 +79,7 @@ export interface FileRouteTypes {
     | '/'
     | '/presentations/datenschutz'
     | '/presentations/was-ist-ki'
+    | '/docs'
     | '/poster'
     | '/presentations'
   fileRoutesByTo: FileRoutesByTo
@@ -77,6 +87,7 @@ export interface FileRouteTypes {
     | '/'
     | '/presentations/datenschutz'
     | '/presentations/was-ist-ki'
+    | '/docs'
     | '/poster'
     | '/presentations'
   id:
@@ -84,6 +95,7 @@ export interface FileRouteTypes {
     | '/'
     | '/presentations/datenschutz'
     | '/presentations/was-ist-ki'
+    | '/docs/'
     | '/poster/'
     | '/presentations/'
   fileRoutesById: FileRoutesById
@@ -92,6 +104,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PresentationsDatenschutzRoute: typeof PresentationsDatenschutzRoute
   PresentationsWasIstKiRoute: typeof PresentationsWasIstKiRoute
+  DocsIndexRoute: typeof DocsIndexRoute
   PosterIndexRoute: typeof PosterIndexRoute
   PresentationsIndexRoute: typeof PresentationsIndexRoute
 }
@@ -119,6 +132,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PosterIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/docs/': {
+      id: '/docs/'
+      path: '/docs'
+      fullPath: '/docs'
+      preLoaderRoute: typeof DocsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/presentations/was-ist-ki': {
       id: '/presentations/was-ist-ki'
       path: '/presentations/was-ist-ki'
@@ -140,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PresentationsDatenschutzRoute: PresentationsDatenschutzRoute,
   PresentationsWasIstKiRoute: PresentationsWasIstKiRoute,
+  DocsIndexRoute: DocsIndexRoute,
   PosterIndexRoute: PosterIndexRoute,
   PresentationsIndexRoute: PresentationsIndexRoute,
 }
