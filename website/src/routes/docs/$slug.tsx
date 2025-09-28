@@ -100,10 +100,13 @@ export const Route = createFileRoute('/docs/$slug')({
 
 function DokumentDetailPage() {
   const document = Route.useLoaderData();
+  const handlePrint = () => {
+    if (typeof window !== 'undefined') window.print();
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[oklch(42.71%_0.1638_271.53)] to-[oklch(20.12%_0.1384_304.73)] text-white font-['Poppins'] p-6 md:p-10">
-      <div className="mx-auto flex max-w-[900px] flex-col gap-8 rounded-lg border border-white/20 bg-white/10 p-6 backdrop-blur-[5px] md:p-10">
+    <div className="min-h-screen print-document-page bg-gradient-to-br from-[oklch(42.71%_0.1638_271.53)] to-[oklch(20.12%_0.1384_304.73)] text-white font-['Poppins'] p-6 md:p-10">
+      <div className="mx-auto print-document-shell flex max-w-[900px] flex-col gap-8 rounded-lg border border-white/20 bg-white/10 p-6 backdrop-blur-[5px] md:p-10">
         <header className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-sm uppercase tracking-[0.2em] text-white/60">
@@ -119,17 +122,17 @@ function DokumentDetailPage() {
           <div className="flex flex-wrap items-center gap-3">
             <Link
               to="/docs"
-              className="inline-flex items-center justify-center rounded-full border border-white/30 px-5 py-2 text-sm font-semibold text-white transition hover:border-white/60 hover:bg-white/10 md:text-base"
+              className="inline-flex print-hidden items-center justify-center rounded-full border border-white/30 px-5 py-2 text-sm font-semibold text-white transition hover:border-white/60 hover:bg-white/10 md:text-base"
             >
               Zur Übersicht
             </Link>
-            <a
-              href={document.downloadUrl}
-              download
-              className="inline-flex items-center justify-center rounded-full bg-purple-500/70 px-5 py-2 text-sm font-semibold text-white transition hover:bg-purple-400/80 md:text-base"
+            <button
+              type="button"
+              onClick={handlePrint}
+              className="inline-flex print-hidden items-center justify-center rounded-full bg-purple-500/70 px-5 py-2 text-sm font-semibold text-white transition hover:bg-purple-400/80 md:text-base"
             >
-              Herunterladen
-            </a>
+              Als PDF drucken
+            </button>
           </div>
         </header>
 
