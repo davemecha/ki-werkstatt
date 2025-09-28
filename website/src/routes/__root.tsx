@@ -50,7 +50,7 @@ function RootDocument({ children }: PropsWithChildren) {
       <head>
         <HeadContent />
       </head>
-      <body className="bg-gradient-to-br from-[oklch(42.71%_0.1638_271.53)] to-[oklch(20.12%_0.1384_304.73)]">
+      <body className="min-h-screen bg-gradient-to-br from-[oklch(42.71%_0.1638_271.53)] to-[oklch(20.12%_0.1384_304.73)]">
         <Header />
         {children}
         {import.meta.env.DEV && (
