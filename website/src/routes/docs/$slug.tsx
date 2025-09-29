@@ -102,7 +102,6 @@ const markdownComponents: Components = {
           aria-label={ariaLabel}
           placeholder={dataPlaceholder}
           title={title}
-          defaultValue={text}
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
