@@ -1,9 +1,39 @@
 import { Link, createFileRoute, notFound } from '@tanstack/react-router';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize from 'rehype-sanitize';
+import { defaultSchema } from 'hast-util-sanitize';
+import { toText } from 'hast-util-to-text';
 import { getDocumentBySlug } from './docs.data';
+
+import type { Schema } from 'hast-util-sanitize';
 import type { Components } from 'react-markdown';
+
 import Footer from '@/components/Footer';
+import { useState } from 'react';
+
+const sanitizeSchema: Schema = {
+  ...defaultSchema,
+  attributes: {
+    ...defaultSchema.attributes,
+    a: [
+      ...(defaultSchema.attributes?.a ?? []),
+      'className',
+      'target',
+      'rel',
+      'title',
+      'aria-label',
+    ],
+    span: [
+      ...(defaultSchema.attributes?.span ?? []),
+      'className',
+      'aria-label',
+      'data-placeholder',
+      'title',
+    ],
+  },
+};
 
 const markdownComponents: Components = {
   h1: ({ node, ...props }) => (
@@ -43,6 +73,45 @@ const markdownComponents: Components = {
   em: ({ node, ...props }) => (
     <em className="italic text-blue-100" {...props} />
   ),
+  span: ({ node, children, className, ...props }) => {
+    const text = node ? toText(node) : '';
+    const hasInputClass = className?.split(/\s+/)?.includes('input-text');
+    const [value, setValue] = useState(text);
+
+    if (!hasInputClass)
+      return (
+        <span className={className} {...props}>
+          {children}
+        </span>
+      );
+
+    const getPropValue = (prop: string, defaultValue?: string) => {
+      const value = node?.properties?.[prop];
+      return typeof value === 'string' ? value : defaultValue;
+    };
+
+    const ariaLabel = getPropValue('aria-label', 'Freitextfeld');
+    const dataPlaceholder = getPropValue('data-placeholder');
+    const title = getPropValue('title');
+
+    return (
+      <>
+        <input
+          type="text"
+          className={className}
+          aria-label={ariaLabel}
+          placeholder={dataPlaceholder}
+          title={title}
+          defaultValue={text}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <span className={className} {...props}>
+          {value}
+        </span>
+      </>
+    );
+  },
   blockquote: ({ node, ...props }) => (
     <blockquote
       className="mt-6 border-l-4 border-yellow-300/60 pl-4 text-lg italic text-blue-100"
@@ -139,6 +208,7 @@ function DokumentDetailPage() {
         <div className="prose prose-invert prose-headings:text-white max-w-none">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
             components={markdownComponents}
             className="markdown-content"
           >

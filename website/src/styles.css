@@ -38,6 +38,24 @@ body {
   }
 }
 
+.markdown-content span.input-text {
+  display: none;
+}
+
+.markdown-content input.input-text {
+  display: inline-block;
+  min-width: 5rem;
+  padding: 0.25rem 0.5rem;
+  border: 0;
+  border-bottom: 2px solid currentColor;
+  background: transparent;
+  color: inherit;
+}
+
+.markdown-content input.input-text:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.7);
+}
 
 @media print {
   @page {
@@ -127,6 +145,14 @@ body {
     max-width: 100% !important;
     height: auto !important;
     page-break-inside: avoid;
+  }
+
+  .markdown-content input.input-text {
+    display: none;
+  }
+
+  .markdown-content span.input-text {
+    display: inline;
   }
 
   footer {
