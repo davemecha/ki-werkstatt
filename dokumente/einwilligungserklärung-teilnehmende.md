@@ -6,7 +6,7 @@
 
 Liebe\:r Teilnehmer\:in,
 
-mit diesem Formular meldest du dich für die AG "KI-Werkstatt" am NAME_DER_SCHULE für das Schuljahr 2025/2026 an. Die AG wird für Schüler\:innen ab 12 Jahren, aller Klassenstufen angeboten und ist ebenfalls offen für Lehrkräfte. Weitere Informationen zum Inhalt und Konzept können dem separaten Infoblatt entnommen werden.
+mit diesem Formular meldest du dich für die AG "KI-Werkstatt" <span class="input-text">an unserer Schule</span> für das Schuljahr <span class="input-text">2025/2026</span> an. Die AG wird für Schüler\:innen ab 12 Jahren, aller Klassenstufen angeboten und ist ebenfalls offen für Lehrkräfte. Weitere Informationen zum Inhalt und Konzept können dem separaten Infoblatt entnommen werden.
 
 Bitte lies die nachfolgenden Informationen sorgfältig durch und fülle alle Felder aus.
 
@@ -49,9 +49,11 @@ Mit deiner Unterschrift bestätigst du, dass du volljährig bist und dass du die
 **Unterschrift:**
 
 ```
-________________
+
+
+________________________________________________
 ```
 
-Bitte gib das ausgefüllte Formular im Sekretariat oder bei der Koordination für die AGs KOORDINIERENDE_PERSON ab.
+Bitte gib das ausgefüllte Formular im Sekretariat oder bei der Koordination für die AGs <span class="input-text"></span> ab.
 
 **Hinweis:** Die Anmeldung wird erst nach Bestätigung durch die AG-Leitung wirksam, da die AG auf 25 Plätze beschränkt ist.

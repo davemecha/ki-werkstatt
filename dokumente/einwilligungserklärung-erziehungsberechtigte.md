@@ -6,7 +6,7 @@
 
 Sehr geehrte Erziehungsberechtigte,
 
-mit diesem Formular melden Sie Ihr Kind für die AG "KI-Werkstatt" am NAME_DER_SCHULE Magdeburg für das Schuljahr 2025/2026 an. Die AG wird für Schüler\:innen ab 12 Jahren, aller Klassenstufen angeboten und ist ebenfalls offen für Lehrkräfte. Weitere Informationen zum Inhalt und Konzept entnehmen Sie bitte dem separaten Infoblatt.
+mit diesem Formular melden Sie Ihr Kind für die AG "KI-Werkstatt" <span class="input-text">an unserer Schule</span> für das Schuljahr <span class="input-text">2025/2026</span> an. Die AG wird für Schüler\:innen ab 12 Jahren, aller Klassenstufen angeboten und ist ebenfalls offen für Lehrkräfte. Weitere Informationen zum Inhalt und Konzept entnehmen Sie bitte dem separaten Infoblatt.
 
 Bitte lesen Sie die nachfolgenden Informationen sorgfältig durch und füllen Sie alle Felder aus.
 
@@ -53,9 +53,11 @@ Mit Ihrer Unterschrift bestätigen Sie, die oben genannten Bedingungen gelesen, 
 **Unterschrift des/der Erziehungsberechtigten:**
 
 ```
-________________
+
+
+________________________________________________
 ```
 
-Bitte geben Sie das ausgefüllte Formular im Sekretariat oder bei der Koordination für die AGs \_\_\_\_\_\_\_\_\_ ab.
+Bitte geben Sie das ausgefüllte Formular im Sekretariat oder bei der Koordination für die AGs <span class="input-text"></span> ab.
 
 **Hinweis:** Die Anmeldung wird erst nach Bestätigung durch die AG-Leitung wirksam, da die AG auf 25 Plätze beschränkt ist.

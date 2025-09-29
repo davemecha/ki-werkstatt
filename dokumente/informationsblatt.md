@@ -4,7 +4,7 @@
 
 Sehr geehrte Eltern und Erziehungsberechtigte,
 
-wir freuen uns, Ihnen die neue Arbeitsgemeinschaft (AG) "KI-Werkstatt" am NAME_DER_SCHULE Magdeburg für das Schuljahr 2025/2026 vorstellen zu dürfen. Diese AG bietet Schülerinnen, Schülern und Lehrkräften die Möglichkeit, gemeinsam die faszinierende Welt der Künstlichen Intelligenz (KI) zu erkunden.
+wir freuen uns, Ihnen die neue Arbeitsgemeinschaft (AG) "KI-Werkstatt" <span class="input-text">an unserer Schule</span> für das Schuljahr <span class="input-text">2025/2026</span> vorstellen zu dürfen. Diese AG bietet Schülerinnen, Schülern und Lehrkräften die Möglichkeit, gemeinsam die faszinierende Welt der Künstlichen Intelligenz (KI) zu erkunden.
 
 ### 1. Idee und Vision der AG „KI-Werkstatt“
 
@@ -33,7 +33,7 @@ Die Teilnehmenden der AG sollen:
 
 ### 4. Organisatorischer Rahmen
 
-Die AG-Treffen finden wöchentlich statt und dauern jeweils 90 Minuten. Die Leitung der AG übernimmt ehrenamtlich LEITUNGSPERSON.
+Die AG-Treffen finden wöchentlich statt und dauern jeweils 90 Minuten. Die Leitung der AG übernimmt ehrenamtlich <span class="input-text">Leitungsperson angeben</span>.
 
 ### 5. Struktur eines typischen AG-Treffens
 
@@ -90,4 +90,4 @@ Dies stellt sicher, dass die Arbeit der AG eine nachhaltige Wirkung in der gesam
 Wir hoffen, Ihnen mit diesem Informationsblatt einen umfassenden Einblick in das Konzept und die Ziele der AG "KI-Werkstatt" gegeben zu haben. Wir sind davon überzeugt, dass diese AG eine wertvolle Bereicherung für die schulische Entwicklung Ihres Kindes darstellen wird und freuen uns auf zahlreiche Anmeldungen.
 
 Bei weiteren Fragen können Sie sich gerne per Mail an die AG-Leitung wenden:
-LEITUNGSPERON [EMAIL_ADRESSE](mailto:EMAIL_ADRESSE)
+<span class="input-text">Leitungsperson und E-Mail angeben</span>

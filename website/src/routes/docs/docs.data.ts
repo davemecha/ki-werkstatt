@@ -19,12 +19,12 @@ export type DocumentData = DocumentMeta & {
   content: string;
 };
 
-const markdownContentModules = import.meta.glob(
-  '../../content/dokumente/*.md',
-  { as: 'raw', eager: true },
-);
+const markdownContentModules = import.meta.glob('@dokumente/*.md', {
+  as: 'raw',
+  eager: true,
+});
 
-const markdownAssetModules = import.meta.glob('../../content/dokumente/*.md', {
+const markdownAssetModules = import.meta.glob('@dokumente/*.md', {
   as: 'url',
   eager: true,
 });
