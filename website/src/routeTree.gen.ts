@@ -15,6 +15,7 @@ import { Route as PosterIndexRouteImport } from './routes/poster/index'
 import { Route as DocsIndexRouteImport } from './routes/docs/index'
 import { Route as PresentationsWasIstKiRouteImport } from './routes/presentations/was-ist-ki'
 import { Route as PresentationsDatenschutzRouteImport } from './routes/presentations/datenschutz'
+import { Route as PresentationsBildgenerierungRouteImport } from './routes/presentations/bildgenerierung'
 import { Route as DocsSlugRouteImport } from './routes/docs/$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -48,6 +49,12 @@ const PresentationsDatenschutzRoute =
     path: '/presentations/datenschutz',
     getParentRoute: () => rootRouteImport,
   } as any)
+const PresentationsBildgenerierungRoute =
+  PresentationsBildgenerierungRouteImport.update({
+    id: '/presentations/bildgenerierung',
+    path: '/presentations/bildgenerierung',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DocsSlugRoute = DocsSlugRouteImport.update({
   id: '/docs/$slug',
   path: '/docs/$slug',
@@ -57,6 +64,7 @@ const DocsSlugRoute = DocsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/docs/$slug': typeof DocsSlugRoute
+  '/presentations/bildgenerierung': typeof PresentationsBildgenerierungRoute
   '/presentations/datenschutz': typeof PresentationsDatenschutzRoute
   '/presentations/was-ist-ki': typeof PresentationsWasIstKiRoute
   '/docs': typeof DocsIndexRoute
@@ -66,6 +74,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/docs/$slug': typeof DocsSlugRoute
+  '/presentations/bildgenerierung': typeof PresentationsBildgenerierungRoute
   '/presentations/datenschutz': typeof PresentationsDatenschutzRoute
   '/presentations/was-ist-ki': typeof PresentationsWasIstKiRoute
   '/docs': typeof DocsIndexRoute
@@ -76,6 +85,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/docs/$slug': typeof DocsSlugRoute
+  '/presentations/bildgenerierung': typeof PresentationsBildgenerierungRoute
   '/presentations/datenschutz': typeof PresentationsDatenschutzRoute
   '/presentations/was-ist-ki': typeof PresentationsWasIstKiRoute
   '/docs/': typeof DocsIndexRoute
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/docs/$slug'
+    | '/presentations/bildgenerierung'
     | '/presentations/datenschutz'
     | '/presentations/was-ist-ki'
     | '/docs'
@@ -96,6 +107,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/docs/$slug'
+    | '/presentations/bildgenerierung'
     | '/presentations/datenschutz'
     | '/presentations/was-ist-ki'
     | '/docs'
@@ -105,6 +117,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/docs/$slug'
+    | '/presentations/bildgenerierung'
     | '/presentations/datenschutz'
     | '/presentations/was-ist-ki'
     | '/docs/'
@@ -115,6 +128,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DocsSlugRoute: typeof DocsSlugRoute
+  PresentationsBildgenerierungRoute: typeof PresentationsBildgenerierungRoute
   PresentationsDatenschutzRoute: typeof PresentationsDatenschutzRoute
   PresentationsWasIstKiRoute: typeof PresentationsWasIstKiRoute
   DocsIndexRoute: typeof DocsIndexRoute
@@ -166,6 +180,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PresentationsDatenschutzRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/presentations/bildgenerierung': {
+      id: '/presentations/bildgenerierung'
+      path: '/presentations/bildgenerierung'
+      fullPath: '/presentations/bildgenerierung'
+      preLoaderRoute: typeof PresentationsBildgenerierungRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/docs/$slug': {
       id: '/docs/$slug'
       path: '/docs/$slug'
@@ -179,6 +200,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DocsSlugRoute: DocsSlugRoute,
+  PresentationsBildgenerierungRoute: PresentationsBildgenerierungRoute,
   PresentationsDatenschutzRoute: PresentationsDatenschutzRoute,
   PresentationsWasIstKiRoute: PresentationsWasIstKiRoute,
   DocsIndexRoute: DocsIndexRoute,

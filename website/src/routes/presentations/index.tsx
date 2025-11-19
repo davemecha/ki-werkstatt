@@ -65,6 +65,21 @@ function PresentationsPage() {
               KI-Diensten.
             </p>
           </div>
+
+          <div className="bg-white/10 rounded-lg p-6 hover:bg-white/20 transition-colors duration-300 backdrop-blur-[2px] border border-white/20">
+            <h2 className="text-3xl font-bold mb-4">
+              <Link
+                to="/presentations/bildgenerierung"
+                className="text-purple-300 underline font-semibold hover:text-white hover:no-underline focus:outline-none focus:ring-2 focus:ring-yellow-300 rounded"
+              >
+                Bildgenerierung
+              </Link>
+            </h2>
+            <p className="text-lg leading-relaxed text-blue-100 opacity-90">
+              Eine Präsentation über Tools und Techniken zur KI-basierten
+              Bildgenerierung.
+            </p>
+          </div>
         </main>
 
         <Footer />
